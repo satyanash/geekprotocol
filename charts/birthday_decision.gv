@@ -1,0 +1,26 @@
+
+strict digraph BirthdayFriend
+{
+	start [ shape = "box", label = "Start" ];
+	end [ shape = "box", label = "End" ];
+
+	want_to_go [ shape = "diamond", label = "Do I want to go?" ];
+	like_this_person [ shape = "diamond", label = "Do I like this person?" ];
+
+	go [ shape = "box", label = "Go!" ];
+	dont_go [ shape = "box", label = "Don't Go!" ];
+
+	start -> want_to_go;
+
+	want_to_go -> go [ label = "Yes" ];
+	want_to_go -> dont_go [ label = "No" ];
+	want_to_go -> like_this_person [ label = "Maybe" ];
+
+	like_this_person -> dont_go [ label = "No" ];
+	like_this_person -> go [ label = "Yes" ];
+
+	go -> end;
+	dont_go -> end;
+
+	{ rank = "same"; go dont_go };
+}

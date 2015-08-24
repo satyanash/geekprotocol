@@ -1,0 +1,21 @@
+
+strict digraph BirthdayGiftSelection
+{
+	start [ shape = "box", label = "Start" ];
+	end [ shape = "box", label = "End" ];
+
+	can_read [ shape = "diamond", label = "Can the person read?" ];
+
+	gift_book [ shape = "box", label = "Gift a book" ];
+	gift_plant [ shape = "box", label = "Gift a potted plant" ];
+
+	start -> can_read;
+
+	can_read -> gift_book [ label = "Yes" ];
+	can_read -> gift_plant [ label = "No" ];
+
+	gift_book -> end;
+	gift_plant -> end;
+
+	{ rank = "same"; gift_plant gift_book };
+}

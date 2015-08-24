@@ -1,0 +1,25 @@
+
+strict digraph BirthdayGift
+{
+	start [ shape = "box", label = "Start" ];
+	end [ shape = "box", label = "End" ];
+
+	gifts_expected [ shape = "diamond", label = "Did the person indicate that he expected gifts?" ];
+	want_to_gift [ shape = "diamond", label = "Do I want to gift something?" ];
+
+	take_gift [ shape = "box", label = "Take a Gift!" ];
+	dont_take_gift [ shape = "box", label = "Don't take a Gift!" ];
+
+	start -> gifts_expected;
+
+	gifts_expected -> dont_take_gift [ label = "No" ];
+	gifts_expected -> want_to_gift [ label = "Yes" ];
+
+	want_to_gift -> dont_take_gift [ label = "No" ];
+	want_to_gift -> take_gift [ label = "Yes" ];
+
+	take_gift -> end;
+	dont_take_gift -> end;
+
+	{ rank = "same"; take_gift dont_take_gift };
+}
