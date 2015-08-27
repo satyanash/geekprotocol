@@ -1,0 +1,29 @@
+
+strict digraph HotelTip
+{
+	start [ shape = "box", label = "Start" ];
+	end [ shape = "box", label = "End" ];
+
+	tip_accepted [ shape = "diamond", label = "Does the hotel allow tipping it's servers?" ];
+	service_liked [ shape = "diamond", label = "Did I like the service?" ];
+	bill_provided [ shape = "diamond", label = "Was I provided with a copy of the bill?" ];
+
+	tip [ shape = "box", label = "Tip!" ];
+	dont_tip [ shape = "box", label = "Don't Tip!" ];
+
+	start -> tip_accepted;
+
+	tip_accepted -> dont_tip [ label = "No" ];
+	tip_accepted -> bill_provided [ label = "Yes" ];
+
+	bill_provided -> dont_tip [ label = "No" ];
+	bill_provided -> service_liked [ label = "Yes" ];
+
+	service_liked -> dont_tip [ label = "No" ]
+	service_liked -> tip [ label = "Yes" ]
+
+	tip -> end;
+	dont_tip -> end;
+
+	{ rank = "same"; tip dont_tip };
+}
