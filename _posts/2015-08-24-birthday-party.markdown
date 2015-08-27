@@ -11,6 +11,10 @@ date: 2015-08-24T11:14:35+05:30
 * **Birthday Person** a person who has their birthday today
 * **Birthday Party** a celebration of the fact that the person has managed to stay alive for one or more years
 
+### People are asking for a party.
+
+![People are asking for a party?](/charts/birthday_throw_party.png)
+
 ### Should I attend this party?
 
 ![Should I attend this party?](/charts/birthday_decision.png)
