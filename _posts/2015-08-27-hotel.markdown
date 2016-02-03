@@ -7,7 +7,12 @@ date: 2015-08-27T23:44:51+05:30
 
 * **Hotel** a place where food is served in exchange for money
 * **Waiter** a person who serves customers at a restaurant
+* **Bill** a document describing the food articles consumed are listed along with their prices
 
 ### Should I leave a tip?
 
 ![Should I leave a tip?](/charts/hotel_tip.png)
+
+### Who should pay the bill?
+
+![Who should pay the bill?](/charts/bill_pay.png)

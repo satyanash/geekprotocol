@@ -1,0 +1,31 @@
+
+strict digraph BillPay
+{
+	start [ shape = "box", label = "Start" ];
+	end [ shape = "box", label = "End" ];
+
+	has_money [ shape = "diamond", label = "Do you have money?" ];
+	is_host [ shape = "diamond", label = "Are you the host?" ];
+	other_can_pay [ shape = "diamond", label = "Can the other person pay?" ];
+
+	pay [ shape = "box", label = "Pay!" ];
+	dont_pay [ shape = "box", label = "Let the other person pay!" ];
+	share_cost [ shape = "box", label = "Share the bill equally!" ];
+
+	start -> has_money;
+
+	has_money -> is_host [ label = "Yes" ];
+	has_money -> other_can_pay [ label = "No" ];
+
+	is_host -> pay [ label = "Yes" ];
+	is_host -> dont_pay [ label = "No" ];
+
+	other_can_pay -> dont_pay [ label = "Yes" ];
+	other_can_pay -> share_cost [ label = "No" ];
+
+	pay -> end;
+	dont_pay -> end;
+	share_cost -> end;
+
+	{ rank = "same"; pay dont_pay };
+}
