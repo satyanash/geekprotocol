@@ -3,7 +3,7 @@ title: Geek Protocol
 description: > # this means to ignore newlines until "baseurl:"
         Social Protocol Documentation
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://geekprotocol.com" # the base hostname & protocol for your site
+url: "https://geekprotocol.com" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
