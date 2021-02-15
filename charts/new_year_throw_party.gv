@@ -1,0 +1,30 @@
+
+strict digraph NewThrowParty
+{
+	start [ shape = "box", label = "Start" ];
+	end [ shape = "box", label = "End" ];
+
+	want_to_throw [ shape = "diamond", label = "Do I want to throw a party?" ];
+	can_manage [ shape = "diamond", label = "Am I good at managing?" ];
+	can_afford [ shape = "diamond", label = "Can I afford throwing a party?" ];
+
+	throw [ shape = "box", label = "Throw!" ];
+	dont_throw [ shape = "box", label = "Don't Throw!" ];
+
+	start -> want_to_throw;
+
+	want_to_throw -> dont_throw [ label = "No" ];
+	want_to_throw -> can_manage [ label = "Yes" ];
+	
+	can_manage -> dont_throw [ label = "No" ];
+	can_manage -> can_afford [ label = "Yes" ];
+
+
+	can_afford -> dont_throw [ label = "No" ];
+	can_afford -> throw [ label = "Yes" ];
+
+	throw -> end;
+	dont_throw -> end;
+
+	{ rank = "same"; throw dont_throw };
+}
